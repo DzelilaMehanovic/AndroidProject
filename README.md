@@ -8,6 +8,6 @@ For example: if word is animal - cat, child can see image of cat on screen and h
 In the section 'play' user can check knowledge through examples.  
 For example: There are shown three images that are located in one of the other three sections and child can hear pronunciation of word. His/her task is to click on the image whose name is pronounced.  
 There is a possibility that the user will see a few items of the same kind and offered a few numbers. His/her task is to click on the number that denotes how many items is shown. 
-Depending on whether the answer is correct or incorrect different sound is heard. 
+Depending on whether the answer is correct or incorrect appropriate message is shown. 
 There is home icon that should be clicked to return to main menu.  
 The application does not have the option of creating accounts or getting points for correct answers and does not contain progress bar.
