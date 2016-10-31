@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CanKid</string>
+    <string name="colors_button">COLOURS</string>
+    <string name="animals_button">ANIMALS</string>
+    <string name="numbers_button">NUMBERS</string>
+    <string name="play_button">PLAY</string>
+</resources>
