@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -11,57 +12,60 @@
     tools:context="ba.edu.ibu.cankid.MainActivity">
 
     <Button
-        android:text="@string/numbers_button"
+        android:text="@string/colors_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button"
-        android:id="@+id/button3"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="15dp"
+        android:id="@+id/button_colors"
         android:minWidth="300px"
-        android:height="110px"
-        android:background="@android:color/holo_red_light" />
+        android:height="150px"
+        android:background="@android:color/holo_blue_dark"
+        android:elevation="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="90dp" />
 
     <Button
         android:text="@string/play_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button3"
-        android:layout_alignLeft="@+id/button2"
-        android:layout_alignStart="@+id/button2"
-        android:id="@+id/button4"
+        android:id="@+id/button_play"
         android:minWidth="300px"
-        android:height="110px"
-        android:background="@android:color/holo_green_light" />
-
-    <Button
-        android:text="@string/colors_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="32dp"
-        android:layout_marginStart="32dp"
-        android:id="@+id/button"
-        android:minWidth="300px"
-        android:height="110px"
-        android:layout_above="@+id/button3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="82dp"
-        android:background="@android:color/holo_blue_dark"
-        android:elevation="0dp" />
+        android:height="150px"
+        android:background="@android:color/holo_green_light"
+        android:layout_alignBaseline="@+id/button_numbers"
+        android:layout_alignBottom="@+id/button_numbers"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:text="@string/animals_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button2"
+        android:id="@+id/button_animals"
+        android:layout_marginLeft="150dp"
         android:minWidth="300px"
-        android:height="110px"
+        android:height="150px"
         android:background="@android:color/holo_orange_light"
-        android:layout_marginLeft="36dp"
-        android:layout_marginStart="36dp"
-        android:layout_alignBaseline="@+id/button"
-        android:layout_alignBottom="@+id/button"
-        android:layout_toRightOf="@+id/button"
-        android:layout_toEndOf="@+id/button" />
+        android:layout_alignBaseline="@+id/button_colors"
+        android:layout_alignBottom="@+id/button_colors"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="@string/numbers_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_numbers"
+        android:minWidth="300px"
+        android:height="150px"
+        android:background="@android:color/holo_red_light"
+        android:layout_marginBottom="142dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/button_colors"
+        android:layout_alignStart="@+id/button_colors" />
+
+
 </RelativeLayout>
