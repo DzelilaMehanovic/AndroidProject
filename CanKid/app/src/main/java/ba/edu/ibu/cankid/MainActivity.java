@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.view.View.OnClickListener;
+import static android.R.attr.data;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,13 +18,33 @@ public class MainActivity extends AppCompatActivity {
 
 
         final Button colorButton=(Button) findViewById(R.id.button_colors);
-
+        final Button animalButton=(Button) findViewById(R.id.button_animals);
+        final Button numberButton=(Button) findViewById(R.id.button_numbers);
+        //colors button click
         colorButton.setOnClickListener(new OnClickListener(){
             public void onClick(View v) {
-                Intent colorIntent = new Intent(MainActivity.this, ColorScreen.class);
-                startActivity(colorIntent);//MainActivity.this  getApplicationContext()
+                Intent colorIntent = new Intent(v.getContext(), ColorScreen.class);
+                startActivityForResult(colorIntent,0);//MainActivity.this  getApplicationContext()
             }
 
         });
+        //animals button click
+        animalButton.setOnClickListener(new OnClickListener(){
+            public void onClick(View v) {
+                Intent colorIntent = new Intent(v.getContext(), AnimalScreen.class);
+                startActivityForResult(colorIntent,0);//MainActivity.this  getApplicationContext()
+            }
+
+        });
+        //numbers button click
+        numberButton.setOnClickListener(new OnClickListener(){
+            public void onClick(View v) {
+                Intent colorIntent = new Intent(v.getContext(), NumberScreen.class);
+                startActivityForResult(colorIntent,0);//MainActivity.this  getApplicationContext()
+            }
+
+        });
+
+
     }
 }

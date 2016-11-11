@@ -4,4 +4,5 @@
     <string name="animals_button">ANIMALS</string>
     <string name="numbers_button">NUMBERS</string>
     <string name="play_button">PLAY</string>
+    <string name="home_back_button">Home</string>
 </resources>
