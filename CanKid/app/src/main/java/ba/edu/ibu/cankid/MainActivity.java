@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         final Button colorButton=(Button) findViewById(R.id.button_colors);
         final Button animalButton=(Button) findViewById(R.id.button_animals);
         final Button numberButton=(Button) findViewById(R.id.button_numbers);
-        //colors button click
+        //blue button click
         colorButton.setOnClickListener(new OnClickListener(){
             public void onClick(View v) {
                 Intent colorIntent = new Intent(v.getContext(), ColorScreen.class);
@@ -31,16 +31,16 @@ public class MainActivity extends AppCompatActivity {
         //animals button click
         animalButton.setOnClickListener(new OnClickListener(){
             public void onClick(View v) {
-                Intent colorIntent = new Intent(v.getContext(), AnimalScreen.class);
-                startActivityForResult(colorIntent,0);//MainActivity.this  getApplicationContext()
+                Intent animalIntent = new Intent(v.getContext(), AnimalScreen.class);
+                startActivityForResult(animalIntent,0);//MainActivity.this  getApplicationContext()
             }
 
         });
         //numbers button click
         numberButton.setOnClickListener(new OnClickListener(){
             public void onClick(View v) {
-                Intent colorIntent = new Intent(v.getContext(), NumberScreen.class);
-                startActivityForResult(colorIntent,0);//MainActivity.this  getApplicationContext()
+                Intent numberIntent = new Intent(v.getContext(), NumberScreen.class);
+                startActivityForResult(numberIntent,0);//MainActivity.this  getApplicationContext()
             }
 
         });

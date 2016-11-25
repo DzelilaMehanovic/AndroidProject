@@ -18,14 +18,14 @@ public class NumberScreen extends AppCompatActivity {
         setContentView(R.layout.numbers);
 
 
-        final Button numberHomeButton=(Button) findViewById(R.id.numbersHomeButton);
+       /* final Button numberHomeButton=(Button) findViewById(R.id.numbersHomeButton);
         numberHomeButton.setOnClickListener(new OnClickListener(){
             public void onClick(View v) {
                 Intent colorIntent = new Intent(v.getContext(), MainActivity.class);
                 startActivityForResult(colorIntent,0);//MainActivity.this  getApplicationContext()
             }
 
-        });
+        });*/
 
 
     }

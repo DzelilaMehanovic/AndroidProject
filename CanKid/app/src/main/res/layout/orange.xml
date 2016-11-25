@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:weightSum="2">
+
+        <ImageView
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            app:srcCompat="@drawable/home"
+            android:id="@+id/homeIcon"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            app:srcCompat="@drawable/arrow"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/orangeNext"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="264dp"
+        android:layout_height="325dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="45dp"
+        app:srcCompat="@drawable/orange"
+        android:id="@+id/orangeImage"
+        android:layout_weight="0.12" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="110dp"
+        android:textSize="36sp"
+        android:text="@string/orange"
+        android:ems="10"
+        android:id="@+id/orangeText" />
+</LinearLayout>
