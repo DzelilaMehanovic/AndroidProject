@@ -23,7 +23,7 @@
             app:srcCompat="@drawable/arrow"
             android:layout_marginLeft="200dp"
             android:layout_marginTop="8dp"
-            android:id="@+id/orangeNext"
+            android:id="@+id/orange_next"
             android:layout_weight="1"/>
     </LinearLayout>
 
@@ -36,13 +36,14 @@
         android:id="@+id/orangeImage"
         android:layout_weight="0.12" />
 
-    <EditText
+    <TextView
+        android:text="@string/orange"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:layout_marginLeft="110dp"
+        android:id="@+id/orange_text"
+        android:layout_marginLeft="135dp"
         android:textSize="36sp"
-        android:text="@string/orange"
         android:ems="10"
-        android:id="@+id/orangeText" />
+        android:textColor="@color/colorOrange"
+        android:textStyle="bold"/>
 </LinearLayout>

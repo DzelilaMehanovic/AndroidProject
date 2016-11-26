@@ -23,8 +23,9 @@
             app:srcCompat="@drawable/arrow"
             android:layout_marginLeft="200dp"
             android:layout_marginTop="8dp"
-            android:id="@+id/purpleNext"
-            android:layout_weight="1"/>
+            android:id="@+id/purple_next"
+            android:layout_weight="1"
+            android:adjustViewBounds="false" />
     </LinearLayout>
 
     <ImageView
@@ -35,15 +36,14 @@
         app:srcCompat="@drawable/purple"
         android:id="@+id/purpleImage" />
 
-    <EditText
+    <TextView
+        android:text="@string/purple"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:layout_marginLeft="120dp"
+        android:id="@+id/purple_text"
+        android:layout_marginLeft="135dp"
         android:textSize="36sp"
-        android:text="@string/purple"
         android:ems="10"
         android:textColor="@color/colorPurple"
-        android:textStyle="bold"
-        android:id="@+id/purpleText" />
+        android:textStyle="bold"/>
 </LinearLayout>

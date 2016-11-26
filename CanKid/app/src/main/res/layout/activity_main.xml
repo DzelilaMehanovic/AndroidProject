@@ -28,19 +28,6 @@
         android:layout_marginTop="90dp" />
 
     <Button
-        android:text="@string/play_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_play"
-        android:minWidth="300px"
-        android:height="150px"
-        android:background="@android:color/holo_green_light"
-        android:layout_alignBaseline="@+id/button_numbers"
-        android:layout_alignBottom="@+id/button_numbers"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
         android:text="@string/animals_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,6 +53,19 @@
         android:layout_alignLeft="@+id/button_colors"
         android:layout_alignStart="@+id/button_colors"
         android:layout_marginTop="97dp" />
+
+    <Button
+        android:text="@string/play_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_play"
+        android:minWidth="300px"
+        android:height="150px"
+        android:background="@android:color/holo_green_light"
+        android:layout_alignBaseline="@+id/button_numbers"
+        android:layout_alignBottom="@+id/button_numbers"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

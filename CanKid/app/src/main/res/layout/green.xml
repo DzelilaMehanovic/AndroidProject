@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:orientation="horizontal" android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -21,7 +22,7 @@
             app:srcCompat="@drawable/arrow"
             android:layout_marginLeft="200dp"
             android:layout_marginTop="8dp"
-            android:id="@+id/greenNext"
+            android:id="@+id/green_next"
             android:layout_weight="1"/>
     </LinearLayout>
 
@@ -33,15 +34,14 @@
         app:srcCompat="@drawable/green"
         android:id="@+id/greenImage" />
 
-    <EditText
+    <TextView
+        android:text="@string/green"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:id="@+id/green_text"
         android:layout_marginLeft="135dp"
         android:textSize="36sp"
-        android:text="@string/green"
         android:ems="10"
         android:textColor="@color/colorGreen"
-        android:textStyle="bold"
-        android:id="@+id/greenText" />
+        android:textStyle="bold"/>
 </LinearLayout>

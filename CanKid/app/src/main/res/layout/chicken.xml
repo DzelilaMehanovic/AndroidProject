@@ -22,26 +22,23 @@
             app:srcCompat="@drawable/arrow"
             android:layout_marginLeft="200dp"
             android:layout_marginTop="8dp"
-            android:id="@+id/yellow_next"
+            android:id="@+id/chicken_next"
             android:layout_weight="1"/>
     </LinearLayout>
 
     <ImageView
-        android:layout_width="264dp"
-        android:layout_height="325dp"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="45dp"
-        app:srcCompat="@drawable/yellow"
-        android:id="@+id/yellowImage" />
-
-    <TextView
-        android:text="@string/yellow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/yellow_text"
+        app:srcCompat="@drawable/chicken2"
+        android:id="@+id/chicken_image" />
+
+    <TextView
         android:layout_marginLeft="135dp"
         android:textSize="36sp"
-        android:ems="10"
-        android:textColor="@color/colorYellow"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:text="CHICKEN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/chicken_text" />
+
 </LinearLayout>

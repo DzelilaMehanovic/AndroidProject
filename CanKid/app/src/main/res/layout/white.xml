@@ -22,7 +22,7 @@
             app:srcCompat="@drawable/arrow"
             android:layout_marginLeft="200dp"
             android:layout_marginTop="8dp"
-            android:id="@+id/whiteNext"
+            android:id="@+id/white_next"
             android:layout_weight="1"/>
     </LinearLayout>
 
@@ -34,15 +34,14 @@
         app:srcCompat="@drawable/white"
         android:id="@+id/whiteImage" />
 
-    <EditText
+    <TextView
+        android:text="@string/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:id="@+id/white_text"
         android:layout_marginLeft="135dp"
         android:textSize="36sp"
-        android:text="@string/white"
         android:ems="10"
         android:textColor="@color/colorWhite"
-        android:textStyle="bold"
-        android:id="@+id/whiteText" />
+        android:textStyle="bold"/>
 </LinearLayout>

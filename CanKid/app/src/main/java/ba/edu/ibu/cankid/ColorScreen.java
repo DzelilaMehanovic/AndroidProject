@@ -23,7 +23,7 @@ public class ColorScreen extends AppCompatActivity {
 
 
       //final Button colorHomeButton=(Button) findViewById(R.id.colorsHomeButton);
-        final ImageView homeIcon = (ImageView) findViewById(R.id.homeIcon);
+       final ImageView homeIcon = (ImageView) findViewById(R.id.homeIcon);
 
         homeIcon.setOnClickListener(new OnClickListener(){
             public void onClick(View v) {
@@ -32,98 +32,93 @@ public class ColorScreen extends AppCompatActivity {
             }
 
         });
-
-
-
-        final ImageView blueNext = (ImageView) findViewById(R.id.blueNext);
-        final ImageView blackNext = (ImageView) findViewById(R.id.blackNext);
-        final ImageView brownNext = (ImageView) findViewById(R.id.brownNext);
-        final ImageView greenNext = (ImageView) findViewById(R.id.greenNext);
-        final ImageView greyNext = (ImageView) findViewById(R.id.greyNext);
-        final ImageView orangeNext = (ImageView) findViewById(R.id.orangeNext);
-        final ImageView purpleNext = (ImageView) findViewById(R.id.purpleNext);
-        final ImageView redNext = (ImageView) findViewById(R.id.redNext);
-        final ImageView whiteNext = (ImageView) findViewById(R.id.whiteNext);
-        final ImageView yellowNext = (ImageView) findViewById(R.id.yellowNext);
-
+        //blue layout
+        final ImageView blueNext = (ImageView) findViewById(R.id.blue_next);
         blueNext.setOnClickListener(new OnClickListener() {
+            @Override
             public void onClick(View v) {
-                // your code here
                 setContentView(R.layout.black);
+                //black layout
+                final ImageView blackNext = (ImageView) findViewById(R.id.black_next);
+                blackNext.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        setContentView(R.layout.brown);
+                        final ImageView brownNext = (ImageView) findViewById(R.id.brown_next);
+
+                        brownNext.setOnClickListener(new OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                setContentView(R.layout.green);
+
+                                final ImageView greenNext = (ImageView) findViewById(R.id.green_next);
+                                greenNext.setOnClickListener(new OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        setContentView(R.layout.grey);
+
+                                        final ImageView greyNext = (ImageView) findViewById(R.id.grey_next);
+                                        greyNext.setOnClickListener(new OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                setContentView(R.layout.orange);
+                                                final ImageView orangeNext = (ImageView) findViewById(R.id.orange_next);
+                                                orangeNext.setOnClickListener(new OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        setContentView(R.layout.purple);
+                                                        final ImageView purpleNext = (ImageView) findViewById(R.id.purple_next);
+
+
+                                                        purpleNext.setOnClickListener(new OnClickListener() {
+                                                            @Override
+                                                            public void onClick(View v) {
+                                                                setContentView(R.layout.red);
+                                                                final ImageView redNext = (ImageView) findViewById(R.id.red_next);
+                                                                redNext.setOnClickListener(new OnClickListener() {
+                                                                    @Override
+                                                                    public void onClick(View v) {
+
+                                                                        setContentView(R.layout.white);
+                                                                        final ImageView whiteNext = (ImageView) findViewById(R.id.white_next);
+
+                                                                        whiteNext.setOnClickListener(new OnClickListener() {
+                                                                            @Override
+                                                                            public void onClick(View v) {
+                                                                                setContentView(R.layout.yellow);
+
+                                                                                final ImageView yellowNext = (ImageView) findViewById(R.id.yellow_next);
+
+
+                                                                                yellowNext.setOnClickListener(new OnClickListener() {
+                                                                                    @Override
+                                                                                    public void onClick(View v) {
+                                                                                        setContentView(R.layout.blue);
+                                                                                    }
+                                                                                });
+
+                                                                            }
+                                                                        });
+
+                                                                    }
+                                                                });
+                                                            }
+                                                        });
+                                                    }
+                                                });
+                                            }
+                                        });
+
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+
+
             }
         });
-
-        blackNext.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                // your code here
-                setContentView(R.layout.brown);
-            }
-        });
-
-       brownNext.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                // your code here
-                setContentView(R.layout.green);
-            }
-        });
-
-       greenNext.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                // your code here
-                setContentView(R.layout.grey);
-            }
-        });
-
-       greyNext.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                // your code here
-                setContentView(R.layout.orange);
-            }
-        });
-
-        orangeNext.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                // your code here
-                setContentView(R.layout.purple);
-            }
-        });
-
-       purpleNext.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                // your code here
-                setContentView(R.layout.red);
-            }
-        });
-
-        redNext.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                // your code here
-                setContentView(R.layout.white);
-            }
-        });
-
-       whiteNext.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                // your code here
-                setContentView(R.layout.yellow);
-            }
-        });
-
-        yellowNext.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                // your code here
-                setContentView(R.layout.blue);
-            }
-        });
-
-
-        yellowNext.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                // your code here
-                setContentView(R.layout.activity_main);
-            }
-        });
-
 
     }
 }

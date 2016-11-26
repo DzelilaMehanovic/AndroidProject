@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:weightSum="2">
+
+        <ImageView
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            app:srcCompat="@drawable/home"
+            android:id="@+id/homeIcon"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            app:srcCompat="@drawable/arrow"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/six_next"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/six"
+        android:id="@+id/six_image" />
+
+    <TextView
+        android:text="SIX"
+        android:layout_marginLeft="175dp"
+        android:layout_marginTop="10dp"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/six_text" />
+
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:weightSum="5"
+        android:layout_weight="0.78">
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:srcCompat="@drawable/apple"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/oneObject"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:srcCompat="@drawable/apple"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="-15dp"
+            android:id="@+id/twoObject"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:srcCompat="@drawable/apple"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="-15dp"
+            android:id="@+id/threeObject"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:srcCompat="@drawable/apple"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="-15dp"
+            android:id="@+id/fourObject"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:srcCompat="@drawable/apple"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="-15dp"
+            android:id="@+id/fiveObject"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:weightSum="1"
+        android:layout_weight="0.78">
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:srcCompat="@drawable/apple"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/sixObject"
+            android:layout_weight="1"/>
+    </LinearLayout>
+</LinearLayout>
