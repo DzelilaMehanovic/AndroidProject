@@ -32,7 +32,7 @@
         android:layout_marginLeft="65dp"
         android:layout_marginTop="45dp"
         app:srcCompat="@drawable/grey"
-        android:id="@+id/greyImage" />
+        android:id="@+id/grey_image" />
 
     <TextView
         android:text="@string/grey"

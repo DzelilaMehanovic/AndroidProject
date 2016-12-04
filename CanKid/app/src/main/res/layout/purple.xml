@@ -34,7 +34,7 @@
         android:layout_marginLeft="65dp"
         android:layout_marginTop="45dp"
         app:srcCompat="@drawable/purple"
-        android:id="@+id/purpleImage" />
+        android:id="@+id/purple_image" />
 
     <TextView
         android:text="@string/purple"

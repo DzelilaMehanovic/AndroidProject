@@ -34,7 +34,7 @@
         android:layout_marginLeft="65dp"
         android:layout_marginTop="45dp"
         app:srcCompat="@drawable/blue"
-        android:id="@+id/blueImage" />
+        android:id="@+id/blue_image" />
 
     <TextView
         android:text="@string/blue"

@@ -35,7 +35,7 @@
         android:id="@+id/bird_image" />
 
     <TextView
-        android:text="BIRD"
+        android:text="BIRDD"
         android:layout_marginLeft="135dp"
         android:textSize="36sp"
         android:textStyle="bold"

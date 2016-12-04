@@ -32,7 +32,7 @@
         android:layout_marginLeft="65dp"
         android:layout_marginTop="45dp"
         app:srcCompat="@drawable/white"
-        android:id="@+id/whiteImage" />
+        android:id="@+id/white_image" />
 
     <TextView
         android:text="@string/white"
