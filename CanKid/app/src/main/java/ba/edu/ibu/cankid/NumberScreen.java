@@ -136,16 +136,15 @@ public class NumberScreen extends AppCompatActivity {
                                                                                 final ImageView tenImage = (ImageView) findViewById(R.id.ten_image);
                                                                                 final MediaPlayer tenSound =  MediaPlayer.create(NumberScreen.this, R.raw.ten);
                                                                                 sound(tenImage, tenSound);
+                                                                                homeButton();
 
-                                                                                final ImageView tenNext = (ImageView) findViewById(R.id.ten_next);
-
-
+                                                                                /*final ImageView tenNext = (ImageView) findViewById(R.id.ten_next);
                                                                                 tenNext.setOnClickListener(new OnClickListener() {
                                                                                     @Override
                                                                                     public void onClick(View v) {
                                                                                         setContentView(R.layout.one);
                                                                                     }
-                                                                                });
+                                                                                });*/
 
                                                                             }
                                                                         });

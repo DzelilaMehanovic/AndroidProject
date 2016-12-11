@@ -27,10 +27,8 @@
     </LinearLayout>
 
     <ImageView
-        android:layout_width="264dp"
-        android:layout_height="325dp"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="271dp"
         app:srcCompat="@drawable/grey"
         android:id="@+id/grey_image" />
 

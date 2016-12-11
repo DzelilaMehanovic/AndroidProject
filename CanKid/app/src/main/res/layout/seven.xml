@@ -29,8 +29,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="225dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="200dp"
         app:srcCompat="@drawable/seven"
         android:id="@+id/seven_image" />
 
@@ -96,6 +95,7 @@
             android:layout_weight="1"/>
 
     </LinearLayout>
+
     <LinearLayout
         android:orientation="horizontal" android:layout_width="match_parent"
         android:layout_height="48dp"

@@ -12,17 +12,16 @@
         <ImageView
             android:layout_width="47dp"
             android:layout_height="47dp"
-            app:srcCompat="@drawable/home"
-            android:id="@+id/homeIcon"
+
             android:layout_weight="1" />
 
         <ImageView
             android:layout_width="47dp"
             android:layout_height="47dp"
-            app:srcCompat="@drawable/arrow"
             android:layout_marginLeft="200dp"
             android:layout_marginTop="8dp"
-            android:id="@+id/ten_next"
+            app:srcCompat="@drawable/home"
+            android:id="@+id/homeIcon"
             android:layout_weight="1"/>
 
 
@@ -31,8 +30,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="225dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="200dp"
         app:srcCompat="@drawable/ten"
         android:id="@+id/ten_image" />
 

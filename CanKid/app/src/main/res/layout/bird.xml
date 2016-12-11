@@ -30,12 +30,12 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="271dp"
         app:srcCompat="@drawable/bird2"
         android:id="@+id/bird_image" />
 
     <TextView
-        android:text="BIRDD"
+        android:text="BIRD"
         android:layout_marginLeft="135dp"
         android:textSize="36sp"
         android:textStyle="bold"

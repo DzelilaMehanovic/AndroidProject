@@ -29,7 +29,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="271dp"
         app:srcCompat="@drawable/goat"
         android:id="@+id/goat_image" />
 

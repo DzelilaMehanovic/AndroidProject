@@ -151,16 +151,14 @@ public class ColorScreen extends AppCompatActivity {
                                                                                 final MediaPlayer yellowSound =  MediaPlayer.create(ColorScreen.this, R.raw.yellow);
                                                                                 sound(yellowImage, yellowSound);
 
-
-                                                                                final ImageView yellowNext = (ImageView) findViewById(R.id.yellow_next);
-
-
+                                                                                        homeButton();
+                                                                               /* final ImageView yellowNext = (ImageView) findViewById(R.id.yellow_next);
                                                                                 yellowNext.setOnClickListener(new OnClickListener() {
                                                                                     @Override
                                                                                     public void onClick(View v) {
                                                                                         setContentView(R.layout.blue);
                                                                                     }
-                                                                                });
+                                                                                });*/
 
                                                                             }
                                                                         });

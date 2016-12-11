@@ -149,8 +149,8 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                                                                 final ImageView sheepImage = (ImageView) findViewById(R.id.sheep_image);
                                                                                 final MediaPlayer sheepSound = MediaPlayer.create(AnimalScreen.this, R.raw.sheep);
                                                                                 sound(sheepImage, sheepSound);
-
-                                                                                final ImageView sheepNext = (ImageView) findViewById(R.id.sheep_next);
+                                                                                homeButton();
+                                                                                /*final ImageView sheepNext = (ImageView) findViewById(R.id.sheep_next);
 
 
                                                                                 sheepNext.setOnClickListener(new OnClickListener() {
@@ -158,7 +158,7 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                                                                     public void onClick(View v) {
                                                                                         setContentView(R.layout.bird);
                                                                                     }
-                                                                                });
+                                                                                });*/
 
                                                                             }
                                                                         });

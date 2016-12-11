@@ -29,10 +29,8 @@
     </LinearLayout>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="225dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="67dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         app:srcCompat="@drawable/five"
         android:id="@+id/five_image" />
 
