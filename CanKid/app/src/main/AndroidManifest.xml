@@ -9,14 +9,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity" android:label="@string/app_name">
+        <activity android:name=".MainActivity" android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ColorScreen"></activity>
-        <activity android:name=".AnimalScreen"></activity>
-        <activity android:name=".NumberScreen"></activity>
+        <activity android:name=".ColorScreen"
+                  android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".AnimalScreen"
+                  android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".NumberScreen"
+                  android:screenOrientation="portrait"/>
     </application>
 </manifest>
+
