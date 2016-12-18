@@ -151,14 +151,15 @@ public class ColorScreen extends AppCompatActivity {
                                                                                 final MediaPlayer yellowSound =  MediaPlayer.create(ColorScreen.this, R.raw.yellow);
                                                                                 sound(yellowImage, yellowSound);
 
-                                                                                        homeButton();
-                                                                               /* final ImageView yellowNext = (ImageView) findViewById(R.id.yellow_next);
+                                                                               final ImageView yellowNext = (ImageView) findViewById(R.id.yellow_next);
                                                                                 yellowNext.setOnClickListener(new OnClickListener() {
                                                                                     @Override
                                                                                     public void onClick(View v) {
-                                                                                        setContentView(R.layout.blue);
+                                                                                        Intent colorIntent = new Intent(v.getContext(), ColorScreen.class);
+                                                                                        colorIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                                                                                        startActivity(colorIntent);
                                                                                     }
-                                                                                });*/
+                                                                                });
 
                                                                             }
                                                                         });
@@ -184,4 +185,34 @@ public class ColorScreen extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
 }
+

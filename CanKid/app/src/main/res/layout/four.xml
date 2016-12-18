@@ -34,7 +34,7 @@
 
     <TextView
         android:text="FOUR"
-        android:layout_marginLeft="135dp"
+        android:layout_marginLeft="115dp"
         android:layout_marginTop="10dp"
         android:textSize="36sp"
         android:textStyle="bold"

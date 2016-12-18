@@ -149,16 +149,16 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                                                                 final ImageView sheepImage = (ImageView) findViewById(R.id.sheep_image);
                                                                                 final MediaPlayer sheepSound = MediaPlayer.create(AnimalScreen.this, R.raw.sheep);
                                                                                 sound(sheepImage, sheepSound);
-                                                                                homeButton();
-                                                                                /*final ImageView sheepNext = (ImageView) findViewById(R.id.sheep_next);
-
+                                                                                final ImageView sheepNext = (ImageView) findViewById(R.id.sheep_next);
 
                                                                                 sheepNext.setOnClickListener(new OnClickListener() {
                                                                                     @Override
                                                                                     public void onClick(View v) {
-                                                                                        setContentView(R.layout.bird);
+                                                                                        Intent animalIntent = new Intent(v.getContext(), AnimalScreen.class);
+                                                                                        animalIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                                                                                        startActivity(animalIntent);
                                                                                     }
-                                                                                });*/
+                                                                                });
 
                                                                             }
                                                                         });
@@ -183,5 +183,33 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
             }
         });
 
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 }

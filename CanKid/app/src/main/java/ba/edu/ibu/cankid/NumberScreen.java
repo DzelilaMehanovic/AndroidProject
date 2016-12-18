@@ -136,15 +136,16 @@ public class NumberScreen extends AppCompatActivity {
                                                                                 final ImageView tenImage = (ImageView) findViewById(R.id.ten_image);
                                                                                 final MediaPlayer tenSound =  MediaPlayer.create(NumberScreen.this, R.raw.ten);
                                                                                 sound(tenImage, tenSound);
-                                                                                homeButton();
 
-                                                                                /*final ImageView tenNext = (ImageView) findViewById(R.id.ten_next);
+                                                                                final ImageView tenNext = (ImageView) findViewById(R.id.ten_next);
                                                                                 tenNext.setOnClickListener(new OnClickListener() {
                                                                                     @Override
                                                                                     public void onClick(View v) {
-                                                                                        setContentView(R.layout.one);
+                                                                                        Intent numberIntent = new Intent(v.getContext(), NumberScreen.class);
+                                                                                        numberIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                                                                                        startActivity(numberIntent);
                                                                                     }
-                                                                                });*/
+                                                                                });
 
                                                                             }
                                                                         });
@@ -170,4 +171,34 @@ public class NumberScreen extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
 }
+

@@ -7,22 +7,22 @@
     <LinearLayout
         android:orientation="horizontal" android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:weightSum="2"
-        android:layout_weight="0.04">
+        android:weightSum="2">
 
         <ImageView
             android:layout_width="47dp"
             android:layout_height="47dp"
-
+            app:srcCompat="@drawable/home"
+            android:id="@+id/homeIcon"
             android:layout_weight="1" />
 
         <ImageView
             android:layout_width="47dp"
             android:layout_height="47dp"
+            app:srcCompat="@drawable/arrow"
             android:layout_marginLeft="200dp"
             android:layout_marginTop="8dp"
-            app:srcCompat="@drawable/home"
-            android:id="@+id/homeIcon"
+            android:id="@+id/sheep_next"
             android:layout_weight="1"/>
     </LinearLayout>
 
@@ -33,7 +33,7 @@
         android:id="@+id/sheep_image" />
 
     <TextView
-        android:layout_marginLeft="135dp"
+        android:layout_marginLeft="115dp"
         android:textSize="36sp"
         android:textStyle="bold"
         android:text="SHEEP"

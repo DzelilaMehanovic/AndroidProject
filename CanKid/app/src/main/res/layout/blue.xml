@@ -31,6 +31,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="271dp"
+        android:layout_marginTop="20dp"
         app:srcCompat="@drawable/blue"
         android:id="@+id/blue_image" />
 
@@ -39,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/blue_text"
-        android:layout_marginLeft="135dp"
+        android:layout_marginLeft="115dp"
         android:textSize="36sp"
         android:ems="10"
         android:textColor="@color/colorBlue"

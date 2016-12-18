@@ -30,6 +30,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="271dp"
+        android:layout_marginTop="20dp"
         app:srcCompat="@drawable/red"
         android:id="@+id/red_image" />
 
@@ -38,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/red_text"
-        android:layout_marginLeft="135dp"
+        android:layout_marginLeft="115dp"
         android:textSize="36sp"
         android:ems="10"
         android:textColor="@color/colorRed"

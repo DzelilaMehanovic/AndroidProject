@@ -33,7 +33,7 @@
         android:id="@+id/rabbit_image" />
 
     <TextView
-        android:layout_marginLeft="135dp"
+        android:layout_marginLeft="115dp"
         android:textSize="36sp"
         android:textStyle="bold"
         android:text="RABBIT"

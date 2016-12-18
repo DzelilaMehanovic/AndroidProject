@@ -35,7 +35,7 @@
 
     <TextView
         android:text="TWO"
-        android:layout_marginLeft="135dp"
+        android:layout_marginLeft="115dp"
         android:layout_marginTop="10dp"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -50,8 +50,8 @@
         android:layout_weight="0.78">
 
         <ImageView
-            android:layout_width="85dp"
-            android:layout_height="67dp"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
             app:srcCompat="@drawable/apple"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
@@ -59,8 +59,8 @@
             android:layout_weight="1"/>
 
         <ImageView
-            android:layout_width="85dp"
-            android:layout_height="67dp"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
             app:srcCompat="@drawable/apple"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="-15dp"
