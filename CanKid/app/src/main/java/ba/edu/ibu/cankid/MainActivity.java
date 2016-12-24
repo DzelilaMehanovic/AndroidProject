@@ -6,6 +6,7 @@ import android.app.DialogFragment;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,11 +17,14 @@ import static android.R.attr.data;
 
 
 public class MainActivity extends AppCompatActivity {
-   /* private static final int ALERTTAG = 0, PROGRESSTAG = 1;
+    // Identifier for each type of Dialog
+    private static final int ALERTTAG = 0, PROGRESSTAG = 1;
+
     private static final String TAG = "AlertDialogActivity";
     private Button closeButton = null;
-    private DialogFragment mDialog;
-*/
+    private DialogFragment dialogClose;
+
+
 
 
     @Override
@@ -28,22 +32,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //close button
-       /* final Button closeButton = (Button) findViewById(R.id.button_close);
+        closeButton = (Button) findViewById(R.id.button_close);
         closeButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDialogFragment(ALERTTAG);
             }
-        });*/
-
+        });
 
         final Button colorButton = (Button) findViewById(R.id.button_colors);
         final Button animalButton = (Button) findViewById(R.id.button_animals);
         final Button numberButton = (Button) findViewById(R.id.button_numbers);
-        //final Button playButton = (Button) findViewById(R.id.button_play);
+        final Button playButton = (Button) findViewById(R.id.button_play);
+        final MediaPlayer  colorSound= MediaPlayer.create(MainActivity.this, R.raw.colour);
+        final MediaPlayer  animalSound= MediaPlayer.create(MainActivity.this, R.raw.animal);
+        final MediaPlayer  numberSound= MediaPlayer.create(MainActivity.this, R.raw.number);
+        final MediaPlayer  playSound= MediaPlayer.create(MainActivity.this, R.raw.play);
         //blue button click
         colorButton.setOnClickListener(new OnClickListener(){
             public void onClick(View v) {
+                colorSound.start();
                 Intent colorIntent = new Intent(v.getContext(), ColorScreen.class);
                 colorIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivityForResult(colorIntent,0);//MainActivity.this  getApplicationContext()
@@ -53,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         //bird button click
         animalButton.setOnClickListener(new OnClickListener(){
             public void onClick(View v) {
+                animalSound.start();
                 Intent animalIntent = new Intent(v.getContext(), AnimalScreen.class);
                 animalIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivityForResult(animalIntent,0);//MainActivity.this  getApplicationContext()
@@ -62,9 +71,20 @@ public class MainActivity extends AppCompatActivity {
         //numbers button click
         numberButton.setOnClickListener(new OnClickListener(){
             public void onClick(View v) {
+                numberSound.start();
                 Intent numberIntent = new Intent(v.getContext(), NumberScreen.class);
                 numberIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivityForResult(numberIntent,0);//MainActivity.this  getApplicationContext()
+            }
+
+        });
+        //play button click
+        playButton.setOnClickListener(new OnClickListener(){
+            public void onClick(View v) {
+                playSound.start();
+                Intent playIntent = new Intent(v.getContext(), PlayScreen.class);
+                playIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                startActivityForResult(playIntent,0);//MainActivity.this  getApplicationContext()
             }
 
         });
@@ -103,15 +123,15 @@ public class MainActivity extends AppCompatActivity {
     super.onDestroy();
  }
 
-   /* void showDialogFragment(int dialogID) {
+    void showDialogFragment(int dialogID) {
         switch (dialogID) {
             case ALERTTAG:
-                mDialog = AlertDialogFragment.newInstance();
-                mDialog.show(getFragmentManager(), "Alert");
+                dialogClose = AlertDialogFragment.newInstance();
+                dialogClose.show(getFragmentManager(), "Alert");
                 break;
             case PROGRESSTAG:
-                mDialog = ProgressDialogFragment.newInstance();
-                mDialog.show(getFragmentManager(), "Shutdown");
+                dialogClose = ProgressDialogFragment.newInstance();
+                dialogClose.show(getFragmentManager(), "Shutdown");
                 break;
         }
     }
@@ -121,19 +141,19 @@ public class MainActivity extends AppCompatActivity {
             showDialogFragment(PROGRESSTAG);
             finishShutdown();
         } else {
-            mDialog.dismiss();
+            dialogClose.dismiss();
         }
     }
-    private void finishShutdown() {
+private void finishShutdown() {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     Log.i(TAG, e.toString());
                 } finally {
-                    finish();
+                   finish();
                 }
             }
         }).start();
@@ -145,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             return new AlertDialog.Builder(getActivity())
-                    .setMessage("Do you want to finish?")
+                    .setMessage("Do you want to finish")
                     .setCancelable(false)
                     .setNegativeButton("No",
                             new DialogInterface.OnClickListener() {
@@ -172,9 +192,10 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             final ProgressDialog dialog = new ProgressDialog(getActivity());
-            dialog.setMessage("Goodbye");
+            dialog.setMessage("Goodbye, see you later");
             dialog.setIndeterminate(true);
+
             return dialog;
         }
-    }*/
+    }
 }

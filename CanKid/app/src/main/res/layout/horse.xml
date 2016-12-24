@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/orange_background">
 
     <LinearLayout
         android:orientation="horizontal" android:layout_width="match_parent"
@@ -33,7 +34,7 @@
         android:id="@+id/horse_image" />
 
     <TextView
-        android:layout_marginLeft="115dp"
+        android:layout_marginLeft="85dp"
         android:textSize="36sp"
         android:textStyle="bold"
         android:text="HORSE"

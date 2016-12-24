@@ -3,7 +3,7 @@
     package="ba.edu.ibu.cankid">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".NumberScreen"
                   android:screenOrientation="portrait"/>
+        <activity android:name=".PlayScreen"
+            android:screenOrientation="portrait"/>
     </application>
 </manifest>
 

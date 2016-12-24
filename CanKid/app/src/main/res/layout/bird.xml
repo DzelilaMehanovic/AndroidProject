@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="@drawable/orange_background">
 
     <LinearLayout
         android:orientation="horizontal" android:layout_width="match_parent"
@@ -31,7 +32,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="271dp"
-        app:srcCompat="@drawable/bird2"
+        app:srcCompat="@drawable/bird"
         android:id="@+id/bird_image" />
 
     <TextView

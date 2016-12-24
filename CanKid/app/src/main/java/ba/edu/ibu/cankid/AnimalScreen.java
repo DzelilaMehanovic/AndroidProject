@@ -49,6 +49,7 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
         homeButton();
         final MediaPlayer birdSound = MediaPlayer.create(this, R.raw.bird);
         final ImageView birdImage = (ImageView) findViewById(R.id.bird_image);
+        birdSound.start();
         sound(birdImage, birdSound);
 
 
@@ -61,6 +62,7 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                 homeButton();
                 final ImageView catImage = (ImageView) findViewById(R.id.cat_image);
                 final MediaPlayer catSound =  MediaPlayer.create(AnimalScreen.this, R.raw.cat);
+                catSound.start();
                 sound(catImage, catSound);
 
                 final ImageView catNext = (ImageView) findViewById(R.id.cat_next);
@@ -71,6 +73,7 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                         homeButton();
                         final MediaPlayer chickenSound = MediaPlayer.create(AnimalScreen.this, R.raw.chicken);
                         final ImageView chickenImage = (ImageView) findViewById(R.id.chicken_image);
+                        chickenSound.start();
                        sound(chickenImage, chickenSound);
 
 
@@ -83,7 +86,8 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                 homeButton();
                                 final ImageView cowImage = (ImageView) findViewById(R.id.cow_image);
                                 final MediaPlayer cowSound = MediaPlayer.create(AnimalScreen.this, R.raw.cow);
-                              sound(cowImage, cowSound);
+                                cowSound.start();
+                                sound(cowImage, cowSound);
 
 
                                 final ImageView cowNext = (ImageView) findViewById(R.id.cow_next);
@@ -94,7 +98,8 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                         homeButton();
                                         final ImageView dogImage = (ImageView) findViewById(R.id.dog_image);
                                         final MediaPlayer dogSound = MediaPlayer.create(AnimalScreen.this, R.raw.dog);
-                                      sound(dogImage, dogSound);
+                                      dogSound.start();
+                                        sound(dogImage, dogSound);
 
 
                                         final ImageView dogNext = (ImageView) findViewById(R.id.dog_next);
@@ -105,6 +110,7 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                                 homeButton();
                                                 final ImageView fishImage = (ImageView) findViewById(R.id.fish_image);
                                                 final MediaPlayer fishSound = MediaPlayer.create(AnimalScreen.this, R.raw.fish);
+                                                fishSound.start();
                                                 sound(fishImage, fishSound);
 
                                                 final ImageView fishNext = (ImageView) findViewById(R.id.fish_next);
@@ -115,6 +121,7 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                                         homeButton();
                                                         final ImageView goatImage = (ImageView) findViewById(R.id.goat_image);
                                                         final MediaPlayer goatSound = MediaPlayer.create(AnimalScreen.this, R.raw.goat);
+                                                        goatSound.start();
                                                         sound(goatImage, goatSound);
                                                         final ImageView goatNext = (ImageView) findViewById(R.id.goat_next);
 
@@ -126,6 +133,7 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                                                 homeButton();
                                                                 final ImageView horseImage = (ImageView) findViewById(R.id.horse_image);
                                                                 final MediaPlayer horseSound = MediaPlayer.create(AnimalScreen.this, R.raw.horse);
+                                                                horseSound.start();
                                                                 sound(horseImage, horseSound);
 
                                                                 final ImageView horseNext = (ImageView) findViewById(R.id.horse_next);
@@ -137,6 +145,7 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                                                         homeButton();
                                                                         final ImageView rabbitImage = (ImageView) findViewById(R.id.rabbit_image);
                                                                         final MediaPlayer rabbitSound = MediaPlayer.create(AnimalScreen.this, R.raw.rabbit);
+                                                                        rabbitSound.start();
                                                                         sound(rabbitImage, rabbitSound);
 
                                                                         final ImageView rabbitNext = (ImageView) findViewById(R.id.rabbit_next);
@@ -148,6 +157,7 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                                                                 homeButton();
                                                                                 final ImageView sheepImage = (ImageView) findViewById(R.id.sheep_image);
                                                                                 final MediaPlayer sheepSound = MediaPlayer.create(AnimalScreen.this, R.raw.sheep);
+                                                                                sheepSound.start();
                                                                                 sound(sheepImage, sheepSound);
                                                                                 final ImageView sheepNext = (ImageView) findViewById(R.id.sheep_next);
 
