@@ -7,13 +7,17 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.view.View.OnClickListener;
+
+import static android.R.attr.button;
 import static android.R.attr.data;
+import static java.security.AccessController.getContext;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         //close button
         closeButton = (Button) findViewById(R.id.button_close);
         closeButton.setOnClickListener(new OnClickListener() {
@@ -40,57 +46,85 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         final Button colorButton = (Button) findViewById(R.id.button_colors);
         final Button animalButton = (Button) findViewById(R.id.button_animals);
         final Button numberButton = (Button) findViewById(R.id.button_numbers);
         final Button playButton = (Button) findViewById(R.id.button_play);
-        final MediaPlayer  colorSound= MediaPlayer.create(MainActivity.this, R.raw.colour);
-        final MediaPlayer  animalSound= MediaPlayer.create(MainActivity.this, R.raw.animal);
-        final MediaPlayer  numberSound= MediaPlayer.create(MainActivity.this, R.raw.number);
-        final MediaPlayer  playSound= MediaPlayer.create(MainActivity.this, R.raw.play);
-        //blue button click
-        colorButton.setOnClickListener(new OnClickListener(){
+        final MediaPlayer colorSound = MediaPlayer.create(MainActivity.this, R.raw.colour);
+        final MediaPlayer animalSound = MediaPlayer.create(MainActivity.this, R.raw.animal);
+        final MediaPlayer numberSound = MediaPlayer.create(MainActivity.this, R.raw.number);
+        final MediaPlayer playSound = MediaPlayer.create(MainActivity.this, R.raw.play);
+
+
+
+        //color button click
+        colorButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 colorSound.start();
-                Intent colorIntent = new Intent(v.getContext(), ColorScreen.class);
-                colorIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                startActivityForResult(colorIntent,0);//MainActivity.this  getApplicationContext()
-            }
+                colorSound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer arg0) {
+                        Intent colorIntent = new Intent(MainActivity.this,ColorScreen.class);
+                        colorIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                        startActivity(colorIntent);
+                    }
+                });
 
+            }
         });
-        //bird button click
-        animalButton.setOnClickListener(new OnClickListener(){
+
+
+        //animal button click
+        animalButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 animalSound.start();
-                Intent animalIntent = new Intent(v.getContext(), AnimalScreen.class);
-                animalIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                startActivityForResult(animalIntent,0);//MainActivity.this  getApplicationContext()
-            }
+                animalSound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer arg0) {
+                        Intent animalIntent = new Intent(MainActivity.this, AnimalScreen.class);
+                        animalIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                        startActivity(animalIntent);
+                    }
+                });
 
+            }
         });
         //numbers button click
-        numberButton.setOnClickListener(new OnClickListener(){
+        numberButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 numberSound.start();
-                Intent numberIntent = new Intent(v.getContext(), NumberScreen.class);
-                numberIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                startActivityForResult(numberIntent,0);//MainActivity.this  getApplicationContext()
-            }
+                numberSound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer arg0) {
+                        Intent numberIntent = new Intent(MainActivity.this, NumberScreen.class);
+                        numberIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                        startActivity(numberIntent);
+                    }
+                });
 
+            }
         });
+
         //play button click
-        playButton.setOnClickListener(new OnClickListener(){
+        playButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 playSound.start();
-                Intent playIntent = new Intent(v.getContext(), PlayScreen.class);
-                playIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                startActivityForResult(playIntent,0);//MainActivity.this  getApplicationContext()
-            }
+                playSound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer arg0) {
+                        Intent playIntent = new Intent(MainActivity.this, PlayScreen.class);
+                        playIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                        startActivity(playIntent);
+                    }
+                });
 
+            }
         });
 
 
     }
+
 
 
 
@@ -179,8 +213,7 @@ private void finishShutdown() {
                             new DialogInterface.OnClickListener() {
                                 public void onClick(
                                         final DialogInterface dialog, int id) {
-                                    ((MainActivity) getActivity())
-                                            .continueShutdown(true);
+                                    ((MainActivity) getActivity()).continueShutdown(true);
                                 }
                             }).create();
         }

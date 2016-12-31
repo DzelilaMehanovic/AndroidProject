@@ -20,13 +20,13 @@ public class AnimalScreen extends AppCompatActivity {
     final ImageView homeIcon = (ImageView) findViewById(R.id.homeIcon);
     homeIcon.setOnClickListener(new OnClickListener(){
         public void onClick(View v) {
-            Intent animalIntent = new Intent(v.getContext(), MainActivity.class);
-            startActivityForResult(animalIntent,0);//MainActivity.this  getApplicationContext()
+            Intent aIntent = new Intent(v.getContext(), MainActivity.class);
+            aIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+            startActivity(aIntent);
+
         }
     });
 }
-
-
     //click on image, start sound
 public void sound(ImageView imageName, final MediaPlayer soundName){
     imageName.setOnClickListener(new OnClickListener() {
@@ -37,24 +37,17 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
     });
 
 }
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bird);
-
-
         homeButton();
         final MediaPlayer birdSound = MediaPlayer.create(this, R.raw.bird);
         final ImageView birdImage = (ImageView) findViewById(R.id.bird_image);
         birdSound.start();
         sound(birdImage, birdSound);
-
-
-
         final ImageView birdNext = (ImageView) findViewById(R.id.bird_next);
+
         birdNext.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,8 +57,8 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                 final MediaPlayer catSound =  MediaPlayer.create(AnimalScreen.this, R.raw.cat);
                 catSound.start();
                 sound(catImage, catSound);
-
                 final ImageView catNext = (ImageView) findViewById(R.id.cat_next);
+
                 catNext.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -75,8 +68,6 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                         final ImageView chickenImage = (ImageView) findViewById(R.id.chicken_image);
                         chickenSound.start();
                        sound(chickenImage, chickenSound);
-
-
                         final ImageView chickenNext = (ImageView) findViewById(R.id.chicken_next);
 
                         chickenNext.setOnClickListener(new OnClickListener() {
@@ -88,10 +79,9 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                 final MediaPlayer cowSound = MediaPlayer.create(AnimalScreen.this, R.raw.cow);
                                 cowSound.start();
                                 sound(cowImage, cowSound);
-
-
                                 final ImageView cowNext = (ImageView) findViewById(R.id.cow_next);
-                               cowNext.setOnClickListener(new OnClickListener() {
+
+                                cowNext.setOnClickListener(new OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
                                         setContentView(R.layout.dog);
@@ -100,9 +90,8 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                         final MediaPlayer dogSound = MediaPlayer.create(AnimalScreen.this, R.raw.dog);
                                       dogSound.start();
                                         sound(dogImage, dogSound);
-
-
                                         final ImageView dogNext = (ImageView) findViewById(R.id.dog_next);
+
                                         dogNext.setOnClickListener(new OnClickListener() {
                                             @Override
                                             public void onClick(View v) {
@@ -112,8 +101,8 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                                 final MediaPlayer fishSound = MediaPlayer.create(AnimalScreen.this, R.raw.fish);
                                                 fishSound.start();
                                                 sound(fishImage, fishSound);
-
                                                 final ImageView fishNext = (ImageView) findViewById(R.id.fish_next);
+
                                                 fishNext.setOnClickListener(new OnClickListener() {
                                                     @Override
                                                     public void onClick(View v) {
@@ -125,7 +114,6 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                                         sound(goatImage, goatSound);
                                                         final ImageView goatNext = (ImageView) findViewById(R.id.goat_next);
 
-
                                                         goatNext.setOnClickListener(new OnClickListener() {
                                                             @Override
                                                             public void onClick(View v) {
@@ -135,19 +123,17 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                                                 final MediaPlayer horseSound = MediaPlayer.create(AnimalScreen.this, R.raw.horse);
                                                                 horseSound.start();
                                                                 sound(horseImage, horseSound);
-
                                                                 final ImageView horseNext = (ImageView) findViewById(R.id.horse_next);
+
                                                                 horseNext.setOnClickListener(new OnClickListener() {
                                                                     @Override
                                                                     public void onClick(View v) {
-
                                                                         setContentView(R.layout.rabbit);
                                                                         homeButton();
                                                                         final ImageView rabbitImage = (ImageView) findViewById(R.id.rabbit_image);
                                                                         final MediaPlayer rabbitSound = MediaPlayer.create(AnimalScreen.this, R.raw.rabbit);
                                                                         rabbitSound.start();
                                                                         sound(rabbitImage, rabbitSound);
-
                                                                         final ImageView rabbitNext = (ImageView) findViewById(R.id.rabbit_next);
 
                                                                         rabbitNext.setOnClickListener(new OnClickListener() {

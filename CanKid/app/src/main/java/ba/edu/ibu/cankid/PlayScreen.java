@@ -43,7 +43,7 @@ public void showToastMessage(){
                 correctAnswer.start();
                 Toast toast = new Toast(getApplicationContext());
                 toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
-                toast.setDuration(Toast.LENGTH_LONG);
+                toast.setDuration(Toast.LENGTH_SHORT);
                 toast.setView(getLayoutInflater().inflate(R.layout.toast_message_correct, null));
                 toast.show();
             }

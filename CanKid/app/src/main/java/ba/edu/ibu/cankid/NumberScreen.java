@@ -1,9 +1,5 @@
 package ba.edu.ibu.cankid;
 
-/**
- * Created by muki on 11.11.2016..
- */
-
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
@@ -18,13 +14,11 @@ public class NumberScreen extends AppCompatActivity {
         final ImageView homeIcon = (ImageView) findViewById(R.id.homeIcon);
         homeIcon.setOnClickListener(new OnClickListener(){
             public void onClick(View v) {
-                Intent animalIntent = new Intent(v.getContext(), MainActivity.class);
-                startActivityForResult(animalIntent,0);//MainActivity.this  getApplicationContext()
+                Intent nIntent = new Intent(v.getContext(), MainActivity.class);
+                startActivity(nIntent);
             }
         });
     }
-
-
     //click on image, start sound
     public void sound(ImageView imageName, final MediaPlayer soundName){
         imageName.setOnClickListener(new OnClickListener() {
@@ -33,10 +27,7 @@ public class NumberScreen extends AppCompatActivity {
                 soundName.start();
             }
         });
-
     }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +37,8 @@ public class NumberScreen extends AppCompatActivity {
         final MediaPlayer oneSound =  MediaPlayer.create(NumberScreen.this, R.raw.one);
         oneSound.start();
         sound(oneImage, oneSound);
+        final ImageView oneNext = (ImageView) findViewById(R.id.one_next);
 
- final ImageView oneNext = (ImageView) findViewById(R.id.one_next);
         oneNext.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,8 +48,8 @@ public class NumberScreen extends AppCompatActivity {
                 final MediaPlayer twoSound =  MediaPlayer.create(NumberScreen.this, R.raw.two);
                 twoSound.start();
                 sound(twoImage, twoSound);
-
                 final ImageView twoNext = (ImageView) findViewById(R.id.two_next);
+
                 twoNext.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -79,8 +70,8 @@ public class NumberScreen extends AppCompatActivity {
                                 final MediaPlayer fourSound =  MediaPlayer.create(NumberScreen.this, R.raw.four);
                                 fourSound.start();
                                 sound(fourImage, fourSound);
-
                                 final ImageView fourNext = (ImageView) findViewById(R.id.four_next);
+
                                 fourNext.setOnClickListener(new OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -90,8 +81,8 @@ public class NumberScreen extends AppCompatActivity {
                                         final MediaPlayer fiveSound =  MediaPlayer.create(NumberScreen.this, R.raw.five);
                                         fiveSound.start();
                                         sound(fiveImage, fiveSound);
-
                                         final ImageView fiveNext = (ImageView) findViewById(R.id.five_next);
+
                                         fiveNext.setOnClickListener(new OnClickListener() {
                                             @Override
                                             public void onClick(View v) {
@@ -102,6 +93,7 @@ public class NumberScreen extends AppCompatActivity {
                                                 sixSound.start();
                                                 sound(sixImage, sixSound);
                                                 final ImageView sixNext = (ImageView) findViewById(R.id.six_next);
+
                                                 sixNext.setOnClickListener(new OnClickListener() {
                                                     @Override
                                                     public void onClick(View v) {
@@ -111,9 +103,7 @@ public class NumberScreen extends AppCompatActivity {
                                                         final MediaPlayer sevenSound =  MediaPlayer.create(NumberScreen.this, R.raw.seven);
                                                         sevenSound.start();
                                                         sound(sevenImage, sevenSound);
-
                                                         final ImageView sevenNext = (ImageView) findViewById(R.id.seven_next);
-
 
                                                         sevenNext.setOnClickListener(new OnClickListener() {
                                                             @Override
@@ -125,10 +115,10 @@ public class NumberScreen extends AppCompatActivity {
                                                                 eightSound.start();
                                                                 sound(eightImage, eightSound);
                                                                 final ImageView eightNext = (ImageView) findViewById(R.id.eight_next);
+
                                                                 eightNext.setOnClickListener(new OnClickListener() {
                                                                     @Override
                                                                     public void onClick(View v) {
-
                                                                         setContentView(R.layout.nine);
                                                                         homeButton();
                                                                         final ImageView nineImage = (ImageView) findViewById(R.id.nine_image);
@@ -146,8 +136,8 @@ public class NumberScreen extends AppCompatActivity {
                                                                                 final MediaPlayer tenSound =  MediaPlayer.create(NumberScreen.this, R.raw.ten);
                                                                                 tenSound.start();
                                                                                 sound(tenImage, tenSound);
-
                                                                                 final ImageView tenNext = (ImageView) findViewById(R.id.ten_next);
+
                                                                                 tenNext.setOnClickListener(new OnClickListener() {
                                                                                     @Override
                                                                                     public void onClick(View v) {
