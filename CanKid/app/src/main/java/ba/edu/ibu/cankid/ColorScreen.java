@@ -19,7 +19,7 @@ public class ColorScreen extends AppCompatActivity {
         homeIcon.setOnClickListener(new OnClickListener(){
             public void onClick(View v) {
                 Intent cIntent = new Intent(v.getContext(), MainActivity.class);
-                cIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+               // cIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(cIntent);
             }
         });
@@ -179,7 +179,7 @@ public class ColorScreen extends AppCompatActivity {
 
     }
 
-  /*  @Override
+    @Override
     public void onStart() {
         super.onStart();
     }
@@ -193,9 +193,16 @@ public class ColorScreen extends AppCompatActivity {
     public void onPause() {
         super.onPause();
     }
+
     @Override
     public void onStop() {
         super.onStop();
+        //   showToastMessage();
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
     }
 
     @Override
@@ -206,6 +213,6 @@ public class ColorScreen extends AppCompatActivity {
     @Override
     public void onDestroy() {
         super.onDestroy();
-    }*/
+    }
 }
 

@@ -19,13 +19,13 @@
             android:layout_weight="1" />
 
         <ImageView
-            android:layout_width="47dp"
             android:layout_height="47dp"
             app:srcCompat="@drawable/arrow"
             android:layout_marginLeft="200dp"
             android:layout_marginTop="8dp"
             android:id="@+id/question1_next"
-            android:layout_weight="1"/>
+            android:layout_weight="0.95"
+            android:layout_width="50dp" />
     </LinearLayout>
 
 
@@ -60,6 +60,14 @@
             android:id="@+id/one_image"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="-30dp"/>
+
+        <ImageView
+            app:srcCompat="@drawable/loudspeaker"
+            android:id="@+id/question1Sound"
+            android:layout_marginLeft="265dp"
+            android:layout_marginTop="1dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
 
     </LinearLayout>
 

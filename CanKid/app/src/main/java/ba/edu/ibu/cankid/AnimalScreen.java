@@ -21,7 +21,7 @@ public class AnimalScreen extends AppCompatActivity {
     homeIcon.setOnClickListener(new OnClickListener(){
         public void onClick(View v) {
             Intent aIntent = new Intent(v.getContext(), MainActivity.class);
-            aIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+           // aIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
             startActivity(aIntent);
 
         }
@@ -194,9 +194,16 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
     public void onPause() {
         super.onPause();
     }
+
     @Override
     public void onStop() {
         super.onStop();
+        //   showToastMessage();
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
     }
 
     @Override

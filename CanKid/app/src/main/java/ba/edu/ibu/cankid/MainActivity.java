@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.view.View.OnClickListener;
+import android.widget.ImageView;
 
 import static android.R.attr.button;
 import static android.R.attr.data;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int ALERTTAG = 0, PROGRESSTAG = 1;
 
     private static final String TAG = "AlertDialogActivity";
-    private Button closeButton = null;
+    private ImageView closeButton = null;
     private DialogFragment dialogClose;
 
 
@@ -35,10 +36,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+       // Intent mainIntent = new Intent(MainActivity.this, MainActivity.class);
+        //mainIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
 
         //close button
-        closeButton = (Button) findViewById(R.id.button_close);
+        closeButton = (ImageView) findViewById(R.id.button_close);
         closeButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onCompletion(MediaPlayer arg0) {
                         Intent playIntent = new Intent(MainActivity.this, PlayScreen.class);
-                        playIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                       // playIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                         startActivity(playIntent);
                     }
                 });
@@ -124,7 +126,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
 
 
 
@@ -141,11 +142,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onPause() {
         super.onPause();
-}
+    }
+
     @Override
     public void onStop() {
         super.onStop();
-   }
+        //   showToastMessage();
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+    }
 
     @Override
     public void onRestart() {
@@ -154,9 +162,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onDestroy() {
-    super.onDestroy();
- }
-
+        super.onDestroy();
+    }
     void showDialogFragment(int dialogID) {
         switch (dialogID) {
             case ALERTTAG:

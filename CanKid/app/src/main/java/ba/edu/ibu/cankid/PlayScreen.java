@@ -35,11 +35,12 @@ public void showToastMessage(){
     toast.setView(getLayoutInflater().inflate(R.layout.toast_message_wrong, null));
     toast.show();
 }
+
     public void checkAnswers(ImageView imageCorrect, ImageView imageWrong1, ImageView imageWrong2 ){
         imageCorrect.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                final MediaPlayer correctAnswer = MediaPlayer.create(PlayScreen.this, R.raw.correct_answer);
+               final MediaPlayer correctAnswer = MediaPlayer.create(PlayScreen.this, R.raw.correct_answer);
                 correctAnswer.start();
                 Toast toast = new Toast(getApplicationContext());
                 toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
@@ -66,12 +67,20 @@ public void showToastMessage(){
         });
     }
 
+    //click on image, start sound
+    public void sound(ImageView imageName, final MediaPlayer soundName){
+        imageName.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                soundName.start();
+            }
+        });
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.question1);
         final MediaPlayer birdSound = MediaPlayer.create(PlayScreen.this, R.raw.bird);
-        //blackSound.setLooping(false);
         birdSound.start();
         homeButton();
         final ImageView bird = (ImageView) findViewById(R.id.bird_image);
@@ -79,13 +88,15 @@ public void showToastMessage(){
         final ImageView one = (ImageView) findViewById(R.id.one_image);
         final ImageView question1Next = (ImageView) findViewById(R.id.question1_next);
         checkAnswers(bird, black, one);
+        final ImageView question1SoundImage = (ImageView) findViewById(R.id.question1Sound);
+        sound(question1SoundImage, birdSound);
 
         question1Next.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 setContentView(R.layout.question2);
                 final MediaPlayer blueSound = MediaPlayer.create(PlayScreen.this, R.raw.blue);
-                //blackSound.setLooping(false);
                 blueSound.start();
                 homeButton();
                 final ImageView cat = (ImageView) findViewById(R.id.cat_image);
@@ -93,13 +104,15 @@ public void showToastMessage(){
                 final ImageView two = (ImageView) findViewById(R.id.two_image);
                 final ImageView question2Next = (ImageView) findViewById(R.id.question2_next);
                 checkAnswers(blue, cat, two);
+                final ImageView question2SoundImage = (ImageView) findViewById(R.id.question2Sound);
+                sound(question2SoundImage, blueSound);
+
 
                 question2Next.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         setContentView(R.layout.question3);
                         final MediaPlayer threeSound = MediaPlayer.create(PlayScreen.this, R.raw.three);
-                        //blackSound.setLooping(false);
                         threeSound.start();
                         homeButton();
                         final ImageView chicken = (ImageView) findViewById(R.id.chicken_image);
@@ -107,13 +120,15 @@ public void showToastMessage(){
                         final ImageView three = (ImageView) findViewById(R.id.three_image);
                         final ImageView question3Next = (ImageView) findViewById(R.id.question3_next);
                         checkAnswers(three, chicken, brown);
+                        final ImageView question3SoundImage = (ImageView) findViewById(R.id.question3Sound);
+                        sound(question3SoundImage, threeSound);
+
 
                         question3Next.setOnClickListener(new OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 setContentView(R.layout.question4);
                                 final MediaPlayer fourSound = MediaPlayer.create(PlayScreen.this, R.raw.four);
-                                //blackSound.setLooping(false);
                                 fourSound.start();
                                 homeButton();
                                 final ImageView cow = (ImageView) findViewById(R.id.cow_image);
@@ -121,13 +136,15 @@ public void showToastMessage(){
                                 final ImageView four = (ImageView) findViewById(R.id.four_image);
                                 final ImageView question4Next = (ImageView) findViewById(R.id.question4_next);
                                 checkAnswers(four, green, cow);
+                                final ImageView question4SoundImage = (ImageView) findViewById(R.id.question4Sound);
+                                sound(question4SoundImage, fourSound);
+
 
                                 question4Next.setOnClickListener(new OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
                                         setContentView(R.layout.question5);
                                         final MediaPlayer greySound = MediaPlayer.create(PlayScreen.this, R.raw.grey);
-                                        //blackSound.setLooping(false);
                                        greySound.start();
                                         homeButton();
                                         final ImageView dog = (ImageView) findViewById(R.id.dog_image);
@@ -135,13 +152,15 @@ public void showToastMessage(){
                                         final ImageView five = (ImageView) findViewById(R.id.five_image);
                                         final ImageView question5Next = (ImageView) findViewById(R.id.question5_next);
                                         checkAnswers(grey, five, dog);
+                                        final ImageView question5SoundImage = (ImageView) findViewById(R.id.question5Sound);
+                                        sound(question5SoundImage, greySound);
+
 
                                         question5Next.setOnClickListener(new OnClickListener() {
                                             @Override
                                             public void onClick(View v) {
                                                 setContentView(R.layout.question6);
                                                 final MediaPlayer fishSound = MediaPlayer.create(PlayScreen.this, R.raw.fish);
-                                                //blackSound.setLooping(false);
                                                 fishSound.start();
                                                 homeButton();
                                                 final ImageView fish = (ImageView) findViewById(R.id.fish_image);
@@ -149,13 +168,15 @@ public void showToastMessage(){
                                                 final ImageView six = (ImageView) findViewById(R.id.six_image);
                                                 final ImageView question6Next = (ImageView) findViewById(R.id.question6_next);
                                                 checkAnswers(fish, orange, six);
+                                                final ImageView question6SoundImage = (ImageView) findViewById(R.id.question6Sound);
+                                                sound(question6SoundImage, fishSound);
+
 
                                                 question6Next.setOnClickListener(new OnClickListener() {
                                                     @Override
                                                     public void onClick(View v) {
                                                         setContentView(R.layout.question7);
                                                         final MediaPlayer purpleSound = MediaPlayer.create(PlayScreen.this, R.raw.purple);
-                                                        //blackSound.setLooping(false);
                                                         purpleSound.start();
                                                         homeButton();
                                                         final ImageView goat = (ImageView) findViewById(R.id.goat_image);
@@ -163,13 +184,15 @@ public void showToastMessage(){
                                                         final ImageView seven = (ImageView) findViewById(R.id.seven_image);
                                                         final ImageView question7Next = (ImageView) findViewById(R.id.question7_next);
                                                         checkAnswers(purple, goat, seven);
+                                                        final ImageView question7SoundImage = (ImageView) findViewById(R.id.question7Sound);
+                                                        sound(question7SoundImage, purpleSound);
+
 
                                                         question7Next.setOnClickListener(new OnClickListener() {
                                                             @Override
                                                             public void onClick(View v) {
                                                                 setContentView(R.layout.question8);
                                                                 final MediaPlayer horseSound = MediaPlayer.create(PlayScreen.this, R.raw.horse);
-                                                                //blackSound.setLooping(false);
                                                                 horseSound.start();
                                                                 homeButton();
                                                                 final ImageView horse = (ImageView) findViewById(R.id.horse_image);
@@ -177,13 +200,15 @@ public void showToastMessage(){
                                                                 final ImageView eight = (ImageView) findViewById(R.id.eight_image);
                                                                 final ImageView question8Next = (ImageView) findViewById(R.id.question8_next);
                                                                 checkAnswers(horse, red, eight);
+                                                                final ImageView question8SoundImage = (ImageView) findViewById(R.id.question8Sound);
+                                                                sound(question8SoundImage, horseSound);
+
 
                                                                 question8Next.setOnClickListener(new OnClickListener() {
                                                                     @Override
                                                                     public void onClick(View v) {
                                                                         setContentView(R.layout.question9);
                                                                         final MediaPlayer nineSound = MediaPlayer.create(PlayScreen.this, R.raw.nine);
-                                                                        //blackSound.setLooping(false);
                                                                        nineSound.start();
                                                                         homeButton();
                                                                         final ImageView rabbit = (ImageView) findViewById(R.id.rabbit_image);
@@ -191,13 +216,15 @@ public void showToastMessage(){
                                                                         final ImageView nine = (ImageView) findViewById(R.id.nine_image);
                                                                         final ImageView question9Next = (ImageView) findViewById(R.id.question9_next);
                                                                         checkAnswers(nine, rabbit, yellow);
+                                                                        final ImageView question9SoundImage = (ImageView) findViewById(R.id.question9Sound);
+                                                                        sound(question9SoundImage, nineSound);
+
 
                                                                         question9Next.setOnClickListener(new OnClickListener() {
                                                                             @Override
                                                                             public void onClick(View v) {
                                                                                 setContentView(R.layout.question10);
                                                                                 final MediaPlayer sheepSound = MediaPlayer.create(PlayScreen.this, R.raw.sheep);
-                                                                                //blackSound.setLooping(false);
                                                                                 sheepSound.start();
                                                                                 homeButton();
                                                                                 final ImageView sheep = (ImageView) findViewById(R.id.sheep_image);
@@ -205,6 +232,9 @@ public void showToastMessage(){
                                                                                 final ImageView ten = (ImageView) findViewById(R.id.ten_image);
                                                                                 final ImageView question10Next = (ImageView) findViewById(R.id.question10_next);
                                                                                 checkAnswers(sheep, white, ten);
+                                                                                final ImageView question10SoundImage = (ImageView) findViewById(R.id.question10Sound);
+                                                                                sound(question10SoundImage, sheepSound);
+
 
 
                                                                                 question10Next.setOnClickListener(new OnClickListener() {
@@ -239,6 +269,42 @@ public void showToastMessage(){
             }
         });
 
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+     //   showToastMessage();
+    }
+
+    @Override
+   public void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+    }
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 }
 

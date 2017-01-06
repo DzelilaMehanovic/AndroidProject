@@ -186,9 +186,16 @@ public class NumberScreen extends AppCompatActivity {
     public void onPause() {
         super.onPause();
     }
+
     @Override
     public void onStop() {
         super.onStop();
+        //   showToastMessage();
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
     }
 
     @Override
