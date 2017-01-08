@@ -1,8 +1,5 @@
 package ba.edu.ibu.cankid;
 
-/**
- * Created by muki on 11.11.2016..
- */
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
@@ -16,17 +13,6 @@ import android.widget.ImageView;
 public class AnimalScreen extends AppCompatActivity {
 
 
-    public void homeButton(){
-    final ImageView homeIcon = (ImageView) findViewById(R.id.homeIcon);
-    homeIcon.setOnClickListener(new OnClickListener(){
-        public void onClick(View v) {
-            Intent aIntent = new Intent(v.getContext(), MainActivity.class);
-           // aIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-            startActivity(aIntent);
-
-        }
-    });
-}
     //click on image, start sound
 public void sound(ImageView imageName, final MediaPlayer soundName){
     imageName.setOnClickListener(new OnClickListener() {
@@ -35,13 +21,11 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
             soundName.start();
         }
     });
-
 }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bird);
-        homeButton();
         final MediaPlayer birdSound = MediaPlayer.create(this, R.raw.bird);
         final ImageView birdImage = (ImageView) findViewById(R.id.bird_image);
         birdSound.start();
@@ -52,7 +36,6 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
             @Override
             public void onClick(View v) {
                 setContentView(R.layout.cat);
-                homeButton();
                 final ImageView catImage = (ImageView) findViewById(R.id.cat_image);
                 final MediaPlayer catSound =  MediaPlayer.create(AnimalScreen.this, R.raw.cat);
                 catSound.start();
@@ -63,7 +46,6 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                     @Override
                     public void onClick(View v) {
                         setContentView(R.layout.chicken);
-                        homeButton();
                         final MediaPlayer chickenSound = MediaPlayer.create(AnimalScreen.this, R.raw.chicken);
                         final ImageView chickenImage = (ImageView) findViewById(R.id.chicken_image);
                         chickenSound.start();
@@ -74,7 +56,6 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                             @Override
                             public void onClick(View v) {
                                 setContentView(R.layout.cow);
-                                homeButton();
                                 final ImageView cowImage = (ImageView) findViewById(R.id.cow_image);
                                 final MediaPlayer cowSound = MediaPlayer.create(AnimalScreen.this, R.raw.cow);
                                 cowSound.start();
@@ -85,7 +66,6 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                     @Override
                                     public void onClick(View v) {
                                         setContentView(R.layout.dog);
-                                        homeButton();
                                         final ImageView dogImage = (ImageView) findViewById(R.id.dog_image);
                                         final MediaPlayer dogSound = MediaPlayer.create(AnimalScreen.this, R.raw.dog);
                                       dogSound.start();
@@ -96,7 +76,6 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                             @Override
                                             public void onClick(View v) {
                                                 setContentView(R.layout.fish);
-                                                homeButton();
                                                 final ImageView fishImage = (ImageView) findViewById(R.id.fish_image);
                                                 final MediaPlayer fishSound = MediaPlayer.create(AnimalScreen.this, R.raw.fish);
                                                 fishSound.start();
@@ -107,7 +86,6 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                                     @Override
                                                     public void onClick(View v) {
                                                         setContentView(R.layout.goat);
-                                                        homeButton();
                                                         final ImageView goatImage = (ImageView) findViewById(R.id.goat_image);
                                                         final MediaPlayer goatSound = MediaPlayer.create(AnimalScreen.this, R.raw.goat);
                                                         goatSound.start();
@@ -118,7 +96,6 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                                             @Override
                                                             public void onClick(View v) {
                                                                 setContentView(R.layout.horse);
-                                                                homeButton();
                                                                 final ImageView horseImage = (ImageView) findViewById(R.id.horse_image);
                                                                 final MediaPlayer horseSound = MediaPlayer.create(AnimalScreen.this, R.raw.horse);
                                                                 horseSound.start();
@@ -129,7 +106,6 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                                                     @Override
                                                                     public void onClick(View v) {
                                                                         setContentView(R.layout.rabbit);
-                                                                        homeButton();
                                                                         final ImageView rabbitImage = (ImageView) findViewById(R.id.rabbit_image);
                                                                         final MediaPlayer rabbitSound = MediaPlayer.create(AnimalScreen.this, R.raw.rabbit);
                                                                         rabbitSound.start();
@@ -140,7 +116,6 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                                                             @Override
                                                                             public void onClick(View v) {
                                                                                 setContentView(R.layout.sheep);
-                                                                                homeButton();
                                                                                 final ImageView sheepImage = (ImageView) findViewById(R.id.sheep_image);
                                                                                 final MediaPlayer sheepSound = MediaPlayer.create(AnimalScreen.this, R.raw.sheep);
                                                                                 sheepSound.start();
@@ -151,7 +126,7 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
                                                                                     @Override
                                                                                     public void onClick(View v) {
                                                                                         Intent animalIntent = new Intent(v.getContext(), AnimalScreen.class);
-                                                                                        animalIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                                                                                        //animalIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                                                                                         startActivity(animalIntent);
                                                                                     }
                                                                                 });
@@ -196,15 +171,7 @@ public void sound(ImageView imageName, final MediaPlayer soundName){
     }
 
     @Override
-    public void onStop() {
-        super.onStop();
-        //   showToastMessage();
-    }
-
-    @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState){
-        super.onRestoreInstanceState(savedInstanceState);
-    }
+    public void onStop() {super.onStop();}
 
     @Override
     public void onRestart() {

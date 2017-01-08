@@ -11,18 +11,13 @@
         android:layout_height="48dp"
         android:weightSum="2">
 
-        <ImageView
-            android:layout_width="47dp"
-            android:layout_height="47dp"
-            app:srcCompat="@drawable/home"
-            android:id="@+id/homeIcon"
-            android:layout_weight="1" />
+
 
         <ImageView
             android:layout_width="47dp"
             android:layout_height="47dp"
             app:srcCompat="@drawable/arrow"
-            android:layout_marginLeft="200dp"
+            android:layout_marginLeft="265dp"
             android:layout_marginTop="8dp"
             android:id="@+id/goat_next"
             android:layout_weight="1"/>

@@ -10,15 +10,7 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
 public class NumberScreen extends AppCompatActivity {
-    public void homeButton(){
-        final ImageView homeIcon = (ImageView) findViewById(R.id.homeIcon);
-        homeIcon.setOnClickListener(new OnClickListener(){
-            public void onClick(View v) {
-                Intent nIntent = new Intent(v.getContext(), MainActivity.class);
-                startActivity(nIntent);
-            }
-        });
-    }
+
     //click on image, start sound
     public void sound(ImageView imageName, final MediaPlayer soundName){
         imageName.setOnClickListener(new OnClickListener() {
@@ -32,7 +24,6 @@ public class NumberScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.one);
-        homeButton();
         final ImageView oneImage = (ImageView) findViewById(R.id.one_image);
         final MediaPlayer oneSound =  MediaPlayer.create(NumberScreen.this, R.raw.one);
         oneSound.start();
@@ -43,7 +34,6 @@ public class NumberScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setContentView(R.layout.two);
-                homeButton();
                 final ImageView twoImage = (ImageView) findViewById(R.id.two_image);
                 final MediaPlayer twoSound =  MediaPlayer.create(NumberScreen.this, R.raw.two);
                 twoSound.start();
@@ -54,7 +44,6 @@ public class NumberScreen extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         setContentView(R.layout.three);
-                        homeButton();
                         final ImageView threeImage = (ImageView) findViewById(R.id.three_image);
                         final MediaPlayer threeSound =  MediaPlayer.create(NumberScreen.this, R.raw.three);
                         threeSound.start();
@@ -65,7 +54,6 @@ public class NumberScreen extends AppCompatActivity {
                             @Override
                             public void onClick(View v) {
                                 setContentView(R.layout.four);
-                                homeButton();
                                 final ImageView fourImage = (ImageView) findViewById(R.id.four_image);
                                 final MediaPlayer fourSound =  MediaPlayer.create(NumberScreen.this, R.raw.four);
                                 fourSound.start();
@@ -76,7 +64,6 @@ public class NumberScreen extends AppCompatActivity {
                                     @Override
                                     public void onClick(View v) {
                                         setContentView(R.layout.five);
-                                        homeButton();
                                         final ImageView fiveImage = (ImageView) findViewById(R.id.five_image);
                                         final MediaPlayer fiveSound =  MediaPlayer.create(NumberScreen.this, R.raw.five);
                                         fiveSound.start();
@@ -87,7 +74,6 @@ public class NumberScreen extends AppCompatActivity {
                                             @Override
                                             public void onClick(View v) {
                                                 setContentView(R.layout.six);
-                                                homeButton();
                                                 final ImageView sixImage = (ImageView) findViewById(R.id.six_image);
                                                 final MediaPlayer sixSound =  MediaPlayer.create(NumberScreen.this, R.raw.six);
                                                 sixSound.start();
@@ -98,7 +84,6 @@ public class NumberScreen extends AppCompatActivity {
                                                     @Override
                                                     public void onClick(View v) {
                                                         setContentView(R.layout.seven);
-                                                        homeButton();
                                                         final ImageView sevenImage = (ImageView) findViewById(R.id.seven_image);
                                                         final MediaPlayer sevenSound =  MediaPlayer.create(NumberScreen.this, R.raw.seven);
                                                         sevenSound.start();
@@ -109,7 +94,6 @@ public class NumberScreen extends AppCompatActivity {
                                                             @Override
                                                             public void onClick(View v) {
                                                                 setContentView(R.layout.eight);
-                                                                homeButton();
                                                                 final ImageView eightImage = (ImageView) findViewById(R.id.eight_image);
                                                                 final MediaPlayer eightSound =  MediaPlayer.create(NumberScreen.this, R.raw.eight);
                                                                 eightSound.start();
@@ -120,7 +104,6 @@ public class NumberScreen extends AppCompatActivity {
                                                                     @Override
                                                                     public void onClick(View v) {
                                                                         setContentView(R.layout.nine);
-                                                                        homeButton();
                                                                         final ImageView nineImage = (ImageView) findViewById(R.id.nine_image);
                                                                         final MediaPlayer nineSound =  MediaPlayer.create(NumberScreen.this, R.raw.nine);
                                                                         nineSound.start();
@@ -131,7 +114,6 @@ public class NumberScreen extends AppCompatActivity {
                                                                             @Override
                                                                             public void onClick(View v) {
                                                                                 setContentView(R.layout.ten);
-                                                                                homeButton();
                                                                                 final ImageView tenImage = (ImageView) findViewById(R.id.ten_image);
                                                                                 final MediaPlayer tenSound =  MediaPlayer.create(NumberScreen.this, R.raw.ten);
                                                                                 tenSound.start();
@@ -142,7 +124,7 @@ public class NumberScreen extends AppCompatActivity {
                                                                                     @Override
                                                                                     public void onClick(View v) {
                                                                                         Intent numberIntent = new Intent(v.getContext(), NumberScreen.class);
-                                                                                        numberIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                                                                                      //  numberIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                                                                                         startActivity(numberIntent);
                                                                                     }
                                                                                 });
@@ -173,35 +155,19 @@ public class NumberScreen extends AppCompatActivity {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-    }
+    public void onStart() { super.onStart();}
 
     @Override
-    public void onResume() {
-        super.onResume();
-    }
+    public void onResume() { super.onResume();}
 
     @Override
-    public void onPause() {
-        super.onPause();
-    }
+    public void onPause() {super.onPause();}
 
     @Override
-    public void onStop() {
-        super.onStop();
-        //   showToastMessage();
-    }
+    public void onStop() {super.onStop();}
 
     @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState){
-        super.onRestoreInstanceState(savedInstanceState);
-    }
-
-    @Override
-    public void onRestart() {
-        super.onRestart();
-    }
+    public void onRestart() {super.onRestart();}
 
     @Override
     public void onDestroy() {

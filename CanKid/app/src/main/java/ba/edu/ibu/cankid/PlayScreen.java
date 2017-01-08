@@ -1,11 +1,8 @@
 package ba.edu.ibu.cankid;
 
-/**
- * Created by muki on 23.12.2016..
- */
-
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -15,38 +12,48 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class PlayScreen extends AppCompatActivity {
-    public void homeButton() {
-        final ImageView homeIcon = (ImageView) findViewById(R.id.homeIcon);
-        homeIcon.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                Intent animalIntent = new Intent(v.getContext(), MainActivity.class);
-                startActivityForResult(animalIntent, 0);//MainActivity.this  getApplicationContext()
-            }
-        });
-    }
-    public void wrongAnswer(){
+
+    public void wrongAnswer() {
         final MediaPlayer wrongAnswer1 = MediaPlayer.create(PlayScreen.this, R.raw.wrong_answer);
         wrongAnswer1.start();
     }
-public void showToastMessage(){
-    Toast toast = new Toast(getApplicationContext());
-    toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
-    toast.setDuration(Toast.LENGTH_SHORT);
-    toast.setView(getLayoutInflater().inflate(R.layout.toast_message_wrong, null));
-    toast.show();
-}
 
-    public void checkAnswers(ImageView imageCorrect, ImageView imageWrong1, ImageView imageWrong2 ){
+    public void showToastMessage() {
+       final Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(getLayoutInflater().inflate(R.layout.toast_message_wrong, null));
+        toast.show();
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                toast.cancel();
+
+            }
+        }, 1500);
+    }
+
+    public void checkAnswers(ImageView imageCorrect, ImageView imageWrong1, ImageView imageWrong2) {
         imageCorrect.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-               final MediaPlayer correctAnswer = MediaPlayer.create(PlayScreen.this, R.raw.correct_answer);
+                final MediaPlayer correctAnswer = MediaPlayer.create(PlayScreen.this, R.raw.correct_answerc);
                 correctAnswer.start();
-                Toast toast = new Toast(getApplicationContext());
-                toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+                final  Toast toast = new Toast(getApplicationContext());
+                toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
                 toast.setDuration(Toast.LENGTH_SHORT);
                 toast.setView(getLayoutInflater().inflate(R.layout.toast_message_correct, null));
                 toast.show();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        toast.cancel();
+                    }
+                }, 1500);
             }
         });
 
@@ -62,13 +69,23 @@ public void showToastMessage(){
             @Override
             public void onClick(View v) {
                 wrongAnswer();
-               showToastMessage();
+                showToastMessage();
             }
         });
     }
-
+      /*public void Re(int layoutR, int img1, int img2, int img3, MediaPlayer soundName, int imgSound){
+            setContentView(layoutR);
+            soundName.start();
+            final ImageView bird = (ImageView) findViewById(img1);
+            final ImageView black = (ImageView) findViewById(img2);
+            final ImageView one = (ImageView) findViewById(img3);
+            checkAnswers(bird, black, one);
+            ImageView question1SoundImage = (ImageView) findViewById(imgSound);
+            sound(question1SoundImage, soundName);
+        }
+*/
     //click on image, start sound
-    public void sound(ImageView imageName, final MediaPlayer soundName){
+    public void sound(ImageView imageName, final MediaPlayer soundName) {
         imageName.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,13 +93,19 @@ public void showToastMessage(){
             }
         });
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.question1);
+
+       /* final MediaPlayer birdSound = MediaPlayer.create(PlayScreen.this, R.raw.bird);
+        final ImageView question1Next = (ImageView) findViewById(R.id.question1_next);
+        Re(R.layout.question1, R.id.bird_image, R.id.black_image, R.id.one_image, birdSound, R.id.question1Sound);
+*/
+
+       setContentView(R.layout.question1);
         final MediaPlayer birdSound = MediaPlayer.create(PlayScreen.this, R.raw.bird);
         birdSound.start();
-        homeButton();
         final ImageView bird = (ImageView) findViewById(R.id.bird_image);
         final ImageView black = (ImageView) findViewById(R.id.black_image);
         final ImageView one = (ImageView) findViewById(R.id.one_image);
@@ -95,10 +118,9 @@ public void showToastMessage(){
             @Override
             public void onClick(View v) {
 
-                setContentView(R.layout.question2);
+               setContentView(R.layout.question2);
                 final MediaPlayer blueSound = MediaPlayer.create(PlayScreen.this, R.raw.blue);
                 blueSound.start();
-                homeButton();
                 final ImageView cat = (ImageView) findViewById(R.id.cat_image);
                 final ImageView blue = (ImageView) findViewById(R.id.blue_image);
                 final ImageView two = (ImageView) findViewById(R.id.two_image);
@@ -114,7 +136,6 @@ public void showToastMessage(){
                         setContentView(R.layout.question3);
                         final MediaPlayer threeSound = MediaPlayer.create(PlayScreen.this, R.raw.three);
                         threeSound.start();
-                        homeButton();
                         final ImageView chicken = (ImageView) findViewById(R.id.chicken_image);
                         final ImageView brown = (ImageView) findViewById(R.id.brown_image);
                         final ImageView three = (ImageView) findViewById(R.id.three_image);
@@ -130,7 +151,6 @@ public void showToastMessage(){
                                 setContentView(R.layout.question4);
                                 final MediaPlayer fourSound = MediaPlayer.create(PlayScreen.this, R.raw.four);
                                 fourSound.start();
-                                homeButton();
                                 final ImageView cow = (ImageView) findViewById(R.id.cow_image);
                                 final ImageView green = (ImageView) findViewById(R.id.green_image);
                                 final ImageView four = (ImageView) findViewById(R.id.four_image);
@@ -145,8 +165,7 @@ public void showToastMessage(){
                                     public void onClick(View v) {
                                         setContentView(R.layout.question5);
                                         final MediaPlayer greySound = MediaPlayer.create(PlayScreen.this, R.raw.grey);
-                                       greySound.start();
-                                        homeButton();
+                                        greySound.start();
                                         final ImageView dog = (ImageView) findViewById(R.id.dog_image);
                                         final ImageView grey = (ImageView) findViewById(R.id.grey_image);
                                         final ImageView five = (ImageView) findViewById(R.id.five_image);
@@ -162,7 +181,6 @@ public void showToastMessage(){
                                                 setContentView(R.layout.question6);
                                                 final MediaPlayer fishSound = MediaPlayer.create(PlayScreen.this, R.raw.fish);
                                                 fishSound.start();
-                                                homeButton();
                                                 final ImageView fish = (ImageView) findViewById(R.id.fish_image);
                                                 final ImageView orange = (ImageView) findViewById(R.id.orange_image);
                                                 final ImageView six = (ImageView) findViewById(R.id.six_image);
@@ -178,7 +196,6 @@ public void showToastMessage(){
                                                         setContentView(R.layout.question7);
                                                         final MediaPlayer purpleSound = MediaPlayer.create(PlayScreen.this, R.raw.purple);
                                                         purpleSound.start();
-                                                        homeButton();
                                                         final ImageView goat = (ImageView) findViewById(R.id.goat_image);
                                                         final ImageView purple = (ImageView) findViewById(R.id.purple_image);
                                                         final ImageView seven = (ImageView) findViewById(R.id.seven_image);
@@ -194,7 +211,6 @@ public void showToastMessage(){
                                                                 setContentView(R.layout.question8);
                                                                 final MediaPlayer horseSound = MediaPlayer.create(PlayScreen.this, R.raw.horse);
                                                                 horseSound.start();
-                                                                homeButton();
                                                                 final ImageView horse = (ImageView) findViewById(R.id.horse_image);
                                                                 final ImageView red = (ImageView) findViewById(R.id.red_image);
                                                                 final ImageView eight = (ImageView) findViewById(R.id.eight_image);
@@ -209,8 +225,7 @@ public void showToastMessage(){
                                                                     public void onClick(View v) {
                                                                         setContentView(R.layout.question9);
                                                                         final MediaPlayer nineSound = MediaPlayer.create(PlayScreen.this, R.raw.nine);
-                                                                       nineSound.start();
-                                                                        homeButton();
+                                                                        nineSound.start();
                                                                         final ImageView rabbit = (ImageView) findViewById(R.id.rabbit_image);
                                                                         final ImageView yellow = (ImageView) findViewById(R.id.yellow_image);
                                                                         final ImageView nine = (ImageView) findViewById(R.id.nine_image);
@@ -226,7 +241,6 @@ public void showToastMessage(){
                                                                                 setContentView(R.layout.question10);
                                                                                 final MediaPlayer sheepSound = MediaPlayer.create(PlayScreen.this, R.raw.sheep);
                                                                                 sheepSound.start();
-                                                                                homeButton();
                                                                                 final ImageView sheep = (ImageView) findViewById(R.id.sheep_image);
                                                                                 final ImageView white = (ImageView) findViewById(R.id.white_image);
                                                                                 final ImageView ten = (ImageView) findViewById(R.id.ten_image);
@@ -236,12 +250,11 @@ public void showToastMessage(){
                                                                                 sound(question10SoundImage, sheepSound);
 
 
-
                                                                                 question10Next.setOnClickListener(new OnClickListener() {
                                                                                     @Override
                                                                                     public void onClick(View v) {
                                                                                         Intent playIntent = new Intent(v.getContext(), PlayScreen.class);
-                                                                                        playIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                                                                                        // playIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                                                                                         startActivity(playIntent);
                                                                                     }
                                                                                 });
@@ -269,6 +282,7 @@ public void showToastMessage(){
             }
         });
 
+
     }
 
     @Override
@@ -289,22 +303,13 @@ public void showToastMessage(){
     @Override
     public void onStop() {
         super.onStop();
-     //   showToastMessage();
     }
 
     @Override
-   public void onRestoreInstanceState(Bundle savedInstanceState){
-        super.onRestoreInstanceState(savedInstanceState);
+    public void onRestart() { super.onRestart();}
+    @Override
+    public void onDestroy() { super.onDestroy();
     }
 
-    @Override
-    public void onRestart() {
-        super.onRestart();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-    }
 }
 
