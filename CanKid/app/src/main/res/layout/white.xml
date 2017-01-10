@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/white_text"
-        android:layout_marginLeft="85dp"
+        android:textAlignment="center"
         android:textSize="36sp"
         android:ems="10"
         android:textColor="@color/colorWhite"

@@ -29,7 +29,7 @@
         android:id="@+id/fish_image" />
 
     <TextView
-        android:layout_marginLeft="115dp"
+        android:textAlignment="center"
         android:textSize="36sp"
         android:textStyle="bold"
         android:text="FISH"

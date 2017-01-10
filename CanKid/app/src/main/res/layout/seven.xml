@@ -30,7 +30,7 @@
 
     <TextView
         android:text="SEVEN"
-        android:layout_marginLeft="95dp"
+        android:textAlignment="center"
         android:layout_marginTop="10dp"
         android:textSize="36sp"
         android:textStyle="bold"

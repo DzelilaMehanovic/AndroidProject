@@ -28,13 +28,13 @@
         android:id="@+id/cat_image" />
 
     <TextView
-        android:layout_marginLeft="115dp"
         android:textSize="36sp"
         android:textStyle="bold"
         android:text="CAT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/cat_text" />
+        android:id="@+id/cat_text"
+        android:textAlignment="center"/>
 
 
 </LinearLayout>

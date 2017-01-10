@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/blue_text"
-        android:layout_marginLeft="115dp"
+        android:textAlignment="center"
         android:textSize="36sp"
         android:ems="10"
         android:textColor="@color/colorBlue"
